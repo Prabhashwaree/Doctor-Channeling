@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="adminDashPane" prefHeight="697.0" prefWidth="1368.0" style="-fx-background-color: #ebebe0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminDashBoardFormController">
+   <children>
+      <Pane blendMode="MULTIPLY" layoutY="1.0" prefHeight="696.0" prefWidth="67.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="left-side-background" />
+         </styleClass>
+         <children>
+            <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="37.0" prefWidth="38.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);" styleClass="left-side-background" stylesheets="@../CSS/StyleSheet.css" />
+            <Pane blendMode="MULTIPLY" layoutX="24.0" layoutY="577.0" prefHeight="29.0" prefWidth="38.0" />
+            <Line endX="-19.5" endY="634.0" layoutX="62.0" layoutY="62.0" startX="-19.499984741210938" startY="-63.0" stroke="WHITE" />
+            <Line endX="-19.499969482421875" endY="626.0" layoutX="72.0" layoutY="70.0" startX="-19.499984741210938" startY="-63.0" stroke="WHITE" />
+            <Line endX="-19.499969482421875" endY="618.0" layoutX="52.0" layoutY="79.0" startX="-19.499969482421875" startY="-79.99999237060547" stroke="WHITE" />
+            <Line endX="-19.499969482421875" endY="618.0" layoutX="43.0" layoutY="79.0" startX="-19.5" startY="-79.99999237060547" stroke="WHITE" />
+            <Line endX="-19.499969482421875" endY="618.0" layoutX="33.0" layoutY="82.0" startX="-19.5" startY="-79.99999237060547" stroke="WHITE" />
+            <Line endX="-19.499969482421875" endY="608.0" layoutX="23.0" layoutY="88.0" startX="-19.499969482421875" startY="-89.00000762939453" stroke="WHITE" />
+            <Line endX="-19.499969482421875" endY="626.0" layoutX="82.0" layoutY="80.0" startX="-19.499984741210938" startY="-63.0" stroke="WHITE" />
+            <Pane layoutX="9.0" layoutY="10.0" prefHeight="57.0" prefWidth="52.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="41.0" layoutX="5.0" layoutY="11.0" opacity="0.48" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/back-3312690-2779888.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="-4.0" layoutY="-1.0" mnemonicParsing="false" onAction="#btnBackToLoginOnAction" prefHeight="64.0" prefWidth="60.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="77.0" prefHeight="38.0" prefWidth="41.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="18.0" layoutX="12.0" layoutY="10.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/menu_vertical_50px.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblMenuBack" layoutX="-5.0" layoutY="-3.0" prefHeight="39.0" prefWidth="52.0" />
+                  <Label fx:id="lblMenu" layoutX="-5.0" layoutY="-1.0" prefHeight="37.0" prefWidth="52.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="355.0" layoutY="-1.0" prefHeight="37.0" prefWidth="75.0" styleClass="left-side-background" stylesheets="@../CSS/StyleSheet.css" />
+      <Pane layoutX="353.0" layoutY="-1.0" prefHeight="37.0" prefWidth="1016.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <Pane layoutX="908.0" layoutY="11.0" prefHeight="22.0" prefWidth="12.0" stylesheets="@../CSS/StyleSheet.css" />
+            <Label fx:id="lblDate" layoutX="258.0" layoutY="1.0" prefHeight="39.0" prefWidth="163.0" text="2021-01-05" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="645.0" layoutY="1.0" prefHeight="39.0" prefWidth="176.0" text="09:12:04" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Line endX="946.5" layoutX="63.0" layoutY="1.0" startX="-464.9999694824219" style="-fx-background-color: #99ffff;" />
+         </children>
+         <styleClass>
+            <String fx:value="left-side-background" />
+            <String fx:value="anchorpane" />
+         </styleClass>
+      </Pane>
+      <Label layoutX="96.0" prefHeight="47.0" prefWidth="246.0" text="DASH BOARD" textFill="#0d9090">
+         <font>
+            <Font name="Bell MT Bold" size="35.0" />
+         </font>
+      </Label>
+      <Pane fx:id="sliderAncorPane" layoutY="134.0" prefHeight="473.0" prefWidth="197.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="left-side-background" />
+         </styleClass>
+         <children>
+            <Button layoutY="158.0" mnemonicParsing="false" onAction="#btnDoctorDetailsOnAction" prefHeight="44.0" prefWidth="197.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="    Doctor Details" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-1.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnPaymentReportOnAction" prefHeight="44.0" prefWidth="197.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="      Payment Report" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="66.0" mnemonicParsing="false" onAction="#btnChartReportOnAction" prefHeight="44.0" prefWidth="197.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="  Chart Report" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutY="347.0" mnemonicParsing="false" onAction="#btnCreatAccountOnAction" prefHeight="44.0" prefWidth="197.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="Log Out" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView blendMode="MULTIPLY" fitHeight="29.0" fitWidth="29.0" layoutX="8.0" layoutY="166.0" opacity="0.92" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/doctors_folder_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="MULTIPLY" fitHeight="29.0" fitWidth="29.0" layoutX="8.0" layoutY="262.0" opacity="0.92" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/online_payment_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="MULTIPLY" fitHeight="29.0" fitWidth="29.0" layoutX="8.0" layoutY="74.0" opacity="0.92" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/increase_32px.png" />
+               </image>
+            </ImageView>
+            <Line endX="138.99996948242188" layoutX="58.0" layoutY="133.0" startX="-58.0" stroke="WHITE" />
+            <Line endX="138.99996948242188" layoutX="58.0" layoutY="230.0" startX="-58.0" stroke="WHITE" />
+            <Line endX="129.99996948242188" layoutX="67.0" layoutY="321.0" startX="-67.0" stroke="WHITE" />
+            <Line endX="129.99996948242188" layoutX="67.0" layoutY="410.0" startX="-67.0" stroke="#2ea8a4" />
+            <Line endX="100.0" layoutX="98.0" layoutY="23.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="100.0" layoutX="98.0" layoutY="32.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="100.0" layoutX="98.0" layoutY="41.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="72.99996948242188" endY="-100.5" layoutX="123.0" layoutY="124.0" startX="72.99996948242188" startY="324.29290771484375" stroke="WHITE" />
+            <Line endX="100.0" layoutX="98.0" layoutY="428.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="100.0" layoutX="98.0" layoutY="437.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="100.0" layoutX="98.0" layoutY="446.0" startX="-100.0" stroke="WHITE" />
+            <ImageView blendMode="MULTIPLY" fitHeight="29.0" fitWidth="29.0" layoutX="8.0" layoutY="355.0" opacity="0.92" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/back_to_24px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="subpane" layoutX="205.0" layoutY="44.0" prefHeight="652.0" prefWidth="1161.0">
+         <children>
+            <Pane layoutX="36.0" layoutY="21.0" prefHeight="238.0" prefWidth="515.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <children>
+                  <TextField fx:id="txtEmpId" layoutX="25.0" layoutY="61.0" onAction="#txtEmployeeIdOnAction" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="29.0" prefWidth="218.0" promptText="Employee Id">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="54.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" text="EMPLOYEE INFORMATION">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtType" layoutX="25.0" layoutY="104.0" onAction="#moveToName" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="29.0" prefWidth="218.0" promptText="Type">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtEmpName" layoutX="25.0" layoutY="148.0" onAction="#moveToAddress" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="29.0" prefWidth="218.0" promptText="Employee Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtEmpAddress" layoutX="265.0" layoutY="61.0" onAction="#moveToSlary" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="29.0" prefWidth="218.0" promptText="Employee Address">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtSalary" layoutX="265.0" layoutY="104.0" onAction="#moveToUserName" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="29.0" prefWidth="218.0" promptText="Salary">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnsSave" layoutX="266.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnNewEmpInforOnAction" prefHeight="31.0" prefWidth="218.0" style="-fx-background-color: #2eb82e;" styleClass="border" stylesheets="@../CSS/StyleSheet.css" text="+   New Employee" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="146.0" layoutY="198.0" mnemonicParsing="false" onAction="#txtRemoveEmpInformOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #ff1a1a;" styleClass="border" stylesheets="@../CSS/StyleSheet.css" text="    Remove" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="25.0" layoutY="198.0" mnemonicParsing="false" onAction="#btnRefrashEmpInforOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: linear-gradient(to bottom, #41b7ed, #32bced, #23c1ec, #11c6eb, #00cae8, #09d0e8, #18d5e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);" stylesheets="@../CSS/StyleSheet.css" text="   Refresh" textFill="#614f4f">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="left-side-background" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </Button>
+                  <ImageView blendMode="MULTIPLY" fitHeight="30.0" fitWidth="20.0" layoutX="34.0" layoutY="204.0" opacity="0.49" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView blendMode="MULTIPLY" fitHeight="30.0" fitWidth="20.0" layoutX="160.0" layoutY="203.0" opacity="0.54" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/delete-1786889-1522301.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView blendMode="MULTIPLY" fitHeight="29.0" fitWidth="31.0" layoutX="20.0" layoutY="19.0" opacity="0.28" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/people_50px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="571.0" layoutY="21.0" prefHeight="238.0" prefWidth="515.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <children>
+                  <Label layoutX="29.0" layoutY="17.0" prefHeight="39.0" prefWidth="227.0" text="SYSTEM USER INFORMATION">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtUserName" layoutX="32.0" layoutY="122.0" onAction="#moveToPassword" onKeyReleased="#validateKeyReleasedOnActions" prefHeight="29.0" prefWidth="218.0" promptText="User Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtPassword" layoutX="32.0" layoutY="169.0" onKeyReleased="#validateKeyReleasedOnActions" prefHeight="29.0" prefWidth="218.0" promptText="Password">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnSave" layoutX="376.0" layoutY="64.0" mnemonicParsing="false" onAction="#bunUserNewEmployee" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #2eb82e;" styleClass="border" stylesheets="@../CSS/StyleSheet.css" text="+  New User" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="376.0" layoutY="118.0" mnemonicParsing="false" onAction="#btnRemoveUserOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #ff1a1a;" styleClass="border" stylesheets="@../CSS/StyleSheet.css" text="    Remove" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="376.0" layoutY="174.0" mnemonicParsing="false" onAction="#btnRefreshUserOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: linear-gradient(to bottom, #41b7ed, #32bced, #23c1ec, #11c6eb, #00cae8, #09d0e8, #18d5e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);" stylesheets="@../CSS/StyleSheet.css" text="   Refresh" textFill="#685f5f">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="left-side-background" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </Button>
+                  <ImageView blendMode="MULTIPLY" fitHeight="30.0" fitWidth="20.0" layoutX="389.0" layoutY="179.0" opacity="0.49" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView blendMode="MULTIPLY" fitHeight="30.0" fitWidth="20.0" layoutX="390.0" layoutY="123.0" opacity="0.54" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/delete-1786889-1522301.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox fx:id="cmbEmployeeId" layoutX="32.0" layoutY="71.0" onAction="#cmbEmpIdOnAction" prefHeight="30.0" prefWidth="218.0" promptText="       Employee Id" stylesheets="@../CSS/StyleSheet.css">
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </ComboBox>
+                  <TextField fx:id="txtEp" layoutX="280.0" layoutY="22.0" onAction="#txtEpOnAction" prefHeight="29.0" prefWidth="218.0" promptText="Search ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView blendMode="MULTIPLY" fitHeight="18.0" fitWidth="18.0" layoutX="471.0" layoutY="26.0" opacity="0.54" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/search-1816292-1539657.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="464.0" layoutY="22.0" orientation="VERTICAL" prefHeight="29.0" prefWidth="1.0" />
+               </children>
+            </Pane>
+            <Pane layoutY="274.0" prefHeight="359.0" prefWidth="752.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <children>
+                  <TableView fx:id="tblEmployeeInformation" layoutX="5.0" layoutY="18.0" prefHeight="322.0" prefWidth="741.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+                     <columns>
+                        <TableColumn fx:id="colempId" prefWidth="83.0" text="Emp Id" />
+                        <TableColumn fx:id="colType" prefWidth="116.0" text="Type" />
+                        <TableColumn fx:id="colEmpName" prefWidth="109.0" text="Employee Name" />
+                        <TableColumn fx:id="colEmpAddress" prefWidth="163.0" text="Employee Address" />
+                        <TableColumn fx:id="colDate" prefWidth="92.0" text="Date" />
+                        <TableColumn fx:id="colTime" prefWidth="87.0" text="Time" />
+                        <TableColumn fx:id="colSalary" prefWidth="90.0" text="Salary" />
+                     </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane layoutX="765.0" layoutY="274.0" prefHeight="359.0" prefWidth="371.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <children>
+                  <TableView fx:id="tblUserInformation" layoutX="5.0" layoutY="14.0" prefHeight="328.0" prefWidth="360.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+                     <columns>
+                        <TableColumn fx:id="colUserInformEmpId" prefWidth="103.0" text="Emp Id" />
+                        <TableColumn fx:id="colUserName" prefWidth="131.0" text="User Name" />
+                        <TableColumn fx:id="colPassword" prefWidth="125.0" text="Password" />
+                     </columns>
+                  </TableView>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

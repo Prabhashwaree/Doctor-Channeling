@@ -1,0 +1,278 @@
+DROP DATABASE IF EXISTS DoctorChanaling;
+CREATE DATABASE IF NOT EXISTS DoctorChanaling;
+SHOW DATABASES ;
+USE DoctorChanaling;
+
+#-------------------
+
+DROP TABLE IF EXISTS Employee;
+CREATE TABLE IF NOT EXISTS Employee(
+   empId VARCHAR(10),
+   type VARCHAR(15),
+   empName VARCHAR(30) NOT NULL DEFAULT 'Unknown',
+   empAddress VARCHAR(45),
+   joinDate VARCHAR(10),
+   joinTime  VARCHAR(20) ,
+   salary DOUBLE,
+   CONSTRAINT PRIMARY KEY (empId)
+);
+
+SHOW TABLES ;
+DESCRIBE Employee;
+
+INSERT INTO Employee VALUES
+('E-0001','Reseption','Nethmini','Panadura','2021-03-04','4.00','50000.00'),
+('E-0002','Admin','Prabhashwaree','Colombo','2021-03-04','4.00','50000.00'),
+('E-0003','Doctor','Gayathree','Kaluthara','2021-03-04','4.00','50000.00');
+
+
+SELECT * FROM Employee;
+
+#---------------------
+
+DROP TABLE IF EXISTS User;
+CREATE TABLE IF NOT EXISTS User(
+   empId VARCHAR(10),
+   userName VARCHAR(30) NOT NULL DEFAULT 'Unknown',
+   password VARCHAR(90),
+   CONSTRAINT PRIMARY KEY (empId),
+   CONSTRAINT FOREIGN KEY (empId) REFERENCES Employee(empId) ON DELETE CASCADE ON UPDATE CASCADE 
+   );
+
+SHOW TABLES ;
+DESCRIBE User;
+
+INSERT INTO User VALUES
+('E-0001','Nethmini',sha1('1234')),
+('E-0002','Prabhashwaree',sha1('12345')),
+('E-0003','Gayathree',sha1('123456'));
+
+SELECT * FROM User;
+
+#------------------------
+
+DROP TABLE IF EXISTS Doctor;
+CREATE TABLE IF NOT EXISTS Doctor(
+   drId VARCHAR(10),
+   drName VARCHAR(30) NOT NULL DEFAULT 'Unknown',
+   contactNo VARCHAR(10),
+   post VARCHAR(10),
+   email VARCHAR(50),
+   CONSTRAINT PRIMARY KEY (drId)
+   
+);
+SHOW TABLES ;
+DESCRIBE Doctor;
+
+INSERT INTO Doctor VALUES
+('D-001','Gayathree Silva','0775485452','Sergen','Silva123@gmail.com');
+
+SELECT * FROM Doctor;
+
+#------------------------
+
+DROP TABLE IF EXISTS `Patients`;
+CREATE TABLE IF NOT EXISTS `Patients`(
+   nIC VARCHAR(10),
+   name VARCHAR(30) NOT NULL DEFAULT 'Unknown',
+   contactNo VARCHAR(10),
+   gender VARCHAR(10),
+   address VARCHAR(45),
+   date VARCHAR(10),
+   time  VARCHAR(20),
+   age VARCHAR(10),
+   empId VARCHAR(10),
+   CONSTRAINT PRIMARY KEY (nIC),
+   CONSTRAINT FOREIGN KEY (empID) REFERENCES User(empId) ON DELETE CASCADE ON UPDATE CASCADE 
+   
+);
+
+SHOW TABLES ;
+DESCRIBE `Patients`;
+
+INSERT INTO `Patients` VALUES
+('995642588V','Nilu Silva','0776984445','Female','B6/47,Nalluruwa,Panadura','2021-10-03','10.00','22','E-0001');
+
+SELECT * FROM `Patients`;
+
+#------------------------
+
+DROP TABLE IF EXISTS Appointment;
+CREATE TABLE IF NOT EXISTS Appointment(
+   appointId VARCHAR(10),
+   disease VARCHAR(45),
+   date VARCHAR(10),
+   time  VARCHAR(20) ,
+   nIC VARCHAR(10),
+   drId VARCHAR(10),
+   status VARCHAR(10),
+   CONSTRAINT PRIMARY KEY (appointId),
+   CONSTRAINT FOREIGN KEY (nIC) REFERENCES `Patients`(nIC) ON DELETE CASCADE ON UPDATE CASCADE ,
+   CONSTRAINT FOREIGN KEY (drId) REFERENCES Doctor(drId) ON DELETE CASCADE ON UPDATE CASCADE
+
+);
+
+SHOW TABLES ;
+DESCRIBE Appointment;
+
+INSERT INTO Appointment VALUES
+('A-001','Corona','2021-10-03','11.00','995642588V','D-001','Active');
+
+SELECT * FROM Appointment;
+
+#------------------------
+DROP TABLE IF EXISTS Payment;
+CREATE TABLE IF NOT EXISTS Payment(
+   paymentId VARCHAR(10),
+   date VARCHAR(10),
+   time  VARCHAR(20),
+   chanalingAmount DOUBLE,
+   testingAmount DOUBLE,
+   total DOUBLE,
+   empId VARCHAR(10),
+   nIC VARCHAR(10),
+   CONSTRAINT PRIMARY KEY (paymentId),
+   CONSTRAINT FOREIGN KEY (empId) REFERENCES User(empId) ON DELETE CASCADE ON UPDATE CASCADE,
+   CONSTRAINT FOREIGN KEY (nIC) REFERENCES `Patients`(nIC) ON DELETE CASCADE ON UPDATE CASCADE 
+   
+);
+SHOW TABLES ;
+DESCRIBE Payment;
+
+INSERT INTO Payment VALUES
+('P-001','2021-10-03','11:00:00','2000.00','10000.00','12000.00','E-0001','995642588V');
+
+SELECT * FROM Payment;
+
+#------------------------
+
+DROP TABLE IF EXISTS Prescription;
+CREATE TABLE IF NOT EXISTS Prescription(
+   presNo VARCHAR(10),
+   medicine VARCHAR(45),
+   date VARCHAR(10),
+   time  VARCHAR(20) ,
+   drId VARCHAR(10),
+   nIC VARCHAR(10),
+   CONSTRAINT PRIMARY KEY (presNo),
+   CONSTRAINT FOREIGN KEY (drId) REFERENCES Doctor(drId) ON DELETE CASCADE ON UPDATE CASCADE ,
+   CONSTRAINT FOREIGN KEY (nIC) REFERENCES `Patients`(nIC) ON DELETE CASCADE ON UPDATE CASCADE 
+   
+);
+
+SHOW TABLES ;
+DESCRIBE Prescription;
+
+INSERT INTO Prescription VALUES
+('P-001','Panadol','2021-10-03','01.00','D-001','995642588V');
+
+SELECT * FROM Prescription;
+
+
+#------------------------
+
+DROP TABLE IF EXISTS `Medical Testing`;
+CREATE TABLE IF NOT EXISTS `Medical Testing`(
+   testId VARCHAR(10),
+   date VARCHAR(10),
+   time VARCHAR(20) ,
+   type VARCHAR(45),
+   testPrize DOUBLE,
+   paymentId VARCHAR(10),
+   presNo VARCHAR(10),
+   CONSTRAINT PRIMARY KEY (testId),
+   CONSTRAINT FOREIGN KEY (paymentId) REFERENCES Payment(paymentId) ON DELETE CASCADE ON UPDATE CASCADE, 
+   CONSTRAINT FOREIGN KEY (presNo) REFERENCES Prescription(presNo) ON DELETE CASCADE ON UPDATE CASCADE 
+
+);
+
+SHOW TABLES ;
+DESCRIBE `Medical Testing`;
+
+INSERT INTO `Medical Testing` VALUES
+('T-001','2021-10-03','02.00','Blood','10000.00','P-001','P-001');
+
+SELECT * FROM `Medical Testing`;
+
+#------------------------
+
+DROP TABLE IF EXISTS `Prescription Detail`;
+CREATE TABLE IF NOT EXISTS `Prescription Detail`(
+   disease VARCHAR(45),
+   presNo VARCHAR(10),
+   testId VARCHAR(10),
+   CONSTRAINT PRIMARY KEY (presNo,testId),
+   CONSTRAINT FOREIGN KEY (presNo) REFERENCES Prescription(presNo) ON DELETE CASCADE ON UPDATE CASCADE ,
+   CONSTRAINT FOREIGN KEY (testId) REFERENCES `Medical Testing`(testId) ON DELETE CASCADE ON UPDATE CASCADE 
+
+);
+
+SHOW TABLES ;
+DESCRIBE `Prescription Detail`;
+
+INSERT INTO `Prescription Detail` VALUES
+('Corona','P-001','T-001');
+
+SELECT * FROM `Prescription Detail`;
+
+
+#------------------------
+
+DROP TABLE IF EXISTS `Testing Details`;
+CREATE TABLE IF NOT EXISTS `Testing Details`(
+   date VARCHAR(10),
+   time VARCHAR(20) ,
+   result VARCHAR(10),
+   `range` VARCHAR(10),
+   tDNIC VARCHAR(10),
+   tDtestId VARCHAR(10),
+   CONSTRAINT PRIMARY KEY (tDNIC,tDtestId),
+   CONSTRAINT FOREIGN KEY (tDNIC) REFERENCES `Patients`(nIC) ON DELETE CASCADE ON UPDATE CASCADE ,
+   CONSTRAINT FOREIGN KEY (tDtestId) REFERENCES `Medical Testing`(testId) ON DELETE CASCADE ON UPDATE CASCADE 
+
+);
+
+SHOW TABLES ;
+DESCRIBE `Testing Details`;
+
+INSERT INTO `Testing Details` VALUES
+('2021-10-03','02.00','Positive','150','995642588V','T-001');
+
+SELECT * FROM `Testing Details`;
+
+
+#SELECT `Patients`.empId, `Patients`.nIC, `Patients`.name, `Patients`.contactNo, `Patients`.age, Appointment.appointId, Appointment.drId,Payment.total FROM `Patients` INNER JOIN Appointment ON `Patients`.nIC = Appointment.nIC INNER JOIN Payment ON `Patients`.nIC = Payment.nIC;
+#SELECT SUM(total) FROM Payment;
+#SELECT MAX(total) FROM Payment;
+#SELECT MIN(total) FROM Payment;
+#SELECT AVG(ChanalingAmount) FROM Payment;
+
+#SELECT SUM(chanalingAmount) FROM Payment;
+#SELECT MAX(testingAmount) FROM Payment;
+#SELECT AVG(ChanalingAmount) FROM Payment;
+
+#SELECT paymentId,SUM(total) AS total FROM Payment GROUP BY paymentId;
+# SELECT chanalingAmount,testingAmount,total, SUM(chanalingAmount),SUM(testingAmount),SUM(total) AS chanalingAmount,testingAmount,total FROM Payment GROUP BY chanalingAmount,testingAmount,total;
+
+#SELECT SUM(chanalingAmount),SUM(testingAmount),SUM(total) AS  chanalingAmount,testingAmount,total FROM Payment GROUP BY chanalingAmount,testingAmount,total;
+
+#SELECT SUM(chanalingAmount),SUM(testingAmount),SUM(total) FROM Payment GROUP BY chanalingAmount,testingAmount,total;
+
+#SELECT date,SUM(chanalingAmount),SUM(testingAmount),SUM(total) FROM Payment;
+#SELECT MAX(chanalingAmount),MAX(testingAmount),MAX(total) FROM Payment;
+#SELECT MIN(chanalingAmount),MIN(testingAmount),MIN(total) FROM Payment;
+
+#SELECT SUM(total) FROM Payment;
+# SELECT date,SUM(total) FROM Payment;
+#SELECT chanalingAmount, testingAmount, total FROM Payment WHERE paymentId=paymentId;
+
+#Pattern name = Pattern.compile("^[A-z ]{3,20}$");
+   # Pattern contactNo = Pattern.compile("[0][0-9]{9}");
+   # Pattern address = Pattern.compile("^[A-Z]{1}[0-9]{1}[/][0/9]{2}[,][A-z]{6,30}[,][A-z]{6,30}$");
+
+#validation.put(txtName,name);
+        #validation.put(txtContact,contactNo);
+        #validation.put(txtAddress,address);
+#SELECT paymentId,chanalingAmount,testingAmount,total,nIC FROM Payment WHERE empId=empId;
+
+

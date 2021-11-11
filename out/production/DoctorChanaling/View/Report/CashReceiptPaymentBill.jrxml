@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DoctoerChanalingRepoart" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0bb8748b-7b42-4fd3-b5be-21bd89983817">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="275" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="-24" width="176" height="106" uuid="65aef21d-459f-4b63-9de7-58637565bd8c"/>
+				<imageExpression><![CDATA["C:/Users/Nethmi/javafx/Doctoer Chanaling Pic/WhatsApp Image 2021-09-13 at 12.39.19.jpeg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="39" width="555" height="40" forecolor="#030303" uuid="eb950379-c364-4cb4-9e6c-554ea5381391"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="20"/>
+				</textElement>
+				<text><![CDATA[CASH RECEIPT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="40" forecolor="#030303" uuid="758374e9-2f8f-4b81-8af4-6956443ae822"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Rounded MT Bold" size="24"/>
+				</textElement>
+				<text><![CDATA[DIAGNOSTIC CENTER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="555" height="40" forecolor="#030303" uuid="e6c51d9c-1bd9-4548-b331-55f2f3929cf3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Monospaced" size="18"/>
+				</textElement>
+				<text><![CDATA[===================================================]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="117" width="130" height="28" forecolor="#030303" uuid="3b3f42c4-6c2a-4dc1-8ef5-6944871b86be"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<text><![CDATA[Date :                ]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="105" y="115" width="145" height="30" uuid="693177a4-b58c-47fc-a05c-c24bcbf33e31"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="36" y="145" width="66" height="28" forecolor="#030303" uuid="a4b6dac3-d734-48b9-b5f7-085deb1a41e3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<text><![CDATA[Time  :                ]]></text>
+			</staticText>
+			<textField pattern="HH:mm">
+				<reportElement x="105" y="143" width="145" height="30" uuid="14c2b31e-6a31-43b4-8337-bb7a20b19498"/>
+				<textElement>
+					<font fontName="Serif" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

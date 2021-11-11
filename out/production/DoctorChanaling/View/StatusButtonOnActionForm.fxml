@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="562.0" prefWidth="803.0" style="-fx-background-color: linear-gradient(to right top, #ffffff, #f3f3f3, #e8e8e8, #dcdcdc, #d1d1d1, #d1d1d1, #d1d1d1, #d1d1d1, #dcdcdc, #e8e8e8, #f3f3f3, #ffffff);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StatusButtonOnActionFormController">
+   <children>
+      <Label layoutX="39.0" layoutY="15.0" prefHeight="43.0" prefWidth="408.0" text="APPOINTMENT STATUS">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="275.0" layoutY="33.0" prefHeight="0.0" prefWidth="499.0" style="-fx-background-color: #000000;" />
+   </children>
+</AnchorPane>

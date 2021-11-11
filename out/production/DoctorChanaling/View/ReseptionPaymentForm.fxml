@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PaymentBillPane" prefHeight="671.0" prefWidth="1161.0" style="-fx-background-color: #eaeae1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReseptionPaymentFormController">
+   <children>
+      <Pane layoutX="21.0" layoutY="159.0" prefHeight="430.0" prefWidth="1086.0" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <TableView fx:id="tblPayment" layoutX="24.0" layoutY="27.0" prefHeight="386.0" prefWidth="1041.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+               <columns>
+                  <TableColumn fx:id="colPaymentId" prefWidth="91.99996948242188" text="Payment Id" />
+                  <TableColumn fx:id="colDate" prefWidth="99.0" text="Date" />
+                  <TableColumn fx:id="colTime" prefWidth="110.0" text="Time" />
+                  <TableColumn fx:id="colChanalingAmount" prefWidth="151.0" text="Chanaling Amount" />
+                  <TableColumn fx:id="colTestingAmount" prefWidth="161.0" text="Testing Amount" />
+                  <TableColumn fx:id="colTotalAmount" prefWidth="141.0" text="Total Amount" />
+                  <TableColumn fx:id="colEmployeeId" prefWidth="111.0" text="Employee Id" />
+                  <TableColumn fx:id="colPatientNIC" prefWidth="175.0" text="Patient NIC" />
+               </columns>
+            </TableView>
+         </children>
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+      </Pane>
+      <Pane layoutX="1129.0" layoutY="47.0" prefHeight="620.0" prefWidth="32.0" style="-fx-background-color: linear-gradient(to bottom, #41b7ed, #32bced, #23c1ec, #11c6eb, #00cae8, #09d0e8, #18d5e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="right-side-background" />
+            <String fx:value="anchorpane" />
+         </styleClass>
+      </Pane>
+      <Pane prefHeight="47.0" prefWidth="1161.0" style="-fx-background-color: linear-gradient(to bottom, #41b7ed, #32bced, #23c1ec, #11c6eb, #00cae8, #09d0e8, #18d5e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <TextField fx:id="txtSearch" layoutX="742.0" layoutY="6.0" onAction="#SearchOnAction" prefHeight="34.0" prefWidth="319.0" promptText="    Search" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="border" />
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="21.0" fitWidth="18.0" layoutX="1029.0" layoutY="13.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/search-1816292-1539657.png" />
+               </image>
+            </ImageView>
+            <Line endX="-1.0" endY="-32.99999237060547" layoutX="1026.0" layoutY="37.0" opacity="0.33" startX="-1.0" startY="2.0" stroke="#05636b" />
+         </children>
+      </Pane>
+      <Label layoutX="40.0" layoutY="6.0" prefHeight="39.0" prefWidth="191.0" text="PAYMENT BILL">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="212.0" layoutY="24.0" prefHeight="0.0" prefWidth="429.0" style="-fx-background-color: #000000#000000;" />
+      <Button layoutX="907.0" layoutY="82.0" mnemonicParsing="false" onAction="#btnBackToFactoryOnAction" prefHeight="39.0" prefWidth="168.0" style="-fx-background-color: #2eb82e;" styleClass="border" stylesheets="@../CSS/StyleSheet.css" text="    Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="27.0" fitWidth="22.0" layoutX="943.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/back_to_24px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

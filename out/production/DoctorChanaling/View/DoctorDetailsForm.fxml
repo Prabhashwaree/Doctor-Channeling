@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="doctorPane" prefHeight="671.0" prefWidth="1152.0" style="-fx-background-color: #ebebe0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DoctorDetailsFormController">
+   <children>
+      <Pane layoutX="234.0" layoutY="56.0" prefHeight="250.0" prefWidth="712.0" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+         <children>
+            <TextField fx:id="txtDoctorId" layoutX="25.0" layoutY="83.0" onAction="#txtDoctorIdOnAction" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="315.0" promptText="Doctor Id">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="25.0" layoutY="14.0" prefHeight="39.0" prefWidth="191.0" text="DOCTOR INFORMATION">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtDrName" layoutX="25.0" layoutY="126.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="315.0" promptText="Doctor Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtContactNo" layoutX="25.0" layoutY="170.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="315.0" promptText="Contact No">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPost" layoutX="356.0" layoutY="83.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="315.0" promptText="Post">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtEmail" layoutX="356.0" layoutY="126.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="315.0" promptText="Email">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnSave" layoutX="520.0" layoutY="18.0" mnemonicParsing="false" onAction="#btnNewEmpInforOnAction" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #2eb82e;" styleClass="border" stylesheets="@../CSS/StyleSheet.css" text="+New Doctor" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="561.0" layoutY="195.0" mnemonicParsing="false" onAction="#txtRemoveEmpInformOnAction" prefHeight="31.0" prefWidth="110.0" style="-fx-background-color: #ff1a1a;" styleClass="border" stylesheets="@../CSS/StyleSheet.css" text="    Remove" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="428.0" layoutY="195.0" mnemonicParsing="false" onAction="#btnRefrashEmpInforOnAction" prefHeight="31.0" prefWidth="110.0" stylesheets="@../CSS/StyleSheet.css" text="   Refresh" textFill="#615a5a">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="border" />
+                  <String fx:value="left-side-background" />
+               </styleClass>
+            </Button>
+            <ImageView blendMode="MULTIPLY" fitHeight="30.0" fitWidth="20.0" layoutX="437.0" layoutY="201.0" opacity="0.49" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+               </image>
+            </ImageView>
+            <ImageView blendMode="MULTIPLY" fitHeight="30.0" fitWidth="20.0" layoutX="575.0" layoutY="200.0" opacity="0.54" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/delete-1786889-1522301.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="92.0" layoutY="319.0" prefHeight="291.0" prefWidth="1006.0" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+         <children>
+            <TableView fx:id="DoctorTable" layoutX="5.0" layoutY="16.0" prefHeight="265.0" prefWidth="994.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+               <columns>
+                  <TableColumn fx:id="colDoctorId" prefWidth="149.0" text="Doctor Id" />
+                  <TableColumn fx:id="colDoctorName" prefWidth="259.0" text="Doctor Name" />
+                  <TableColumn fx:id="colContactNo" prefWidth="187.0" text="Contact No" />
+                  <TableColumn fx:id="colPost" prefWidth="164.0" text="Post" />
+                  <TableColumn fx:id="colEmail" prefWidth="234.0" text="Email" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Label layoutX="14.0" layoutY="6.0" prefHeight="59.0" prefWidth="230.0" text="Doctor Details">
+         <font>
+            <Font name="Bell MT Bold" size="31.0" />
+         </font>
+      </Label>
+      <Button layoutX="932.0" layoutY="617.0" mnemonicParsing="false" onAction="#btnBackToFactoryOnAction" prefHeight="35.0" prefWidth="157.0" stylesheets="@../CSS/StyleSheet.css" text="    Back" textFill="#515050">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <styleClass>
+            <String fx:value="left-side-background" />
+            <String fx:value="border" />
+         </styleClass>
+      </Button>
+      <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="957.0" layoutY="623.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/back_to_24px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

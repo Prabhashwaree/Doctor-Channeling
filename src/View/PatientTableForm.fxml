@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="atientAncorPane" prefHeight="671.0" prefWidth="1122.0" style="-fx-background-color: #ebebe0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PatientTableFormController">
+   <children>
+      <Pane blendMode="SRC_ATOP" layoutX="19.0" layoutY="139.0" prefHeight="474.0" prefWidth="1072.0" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+         <children>
+            <TableView fx:id="tblPation" layoutX="4.0" layoutY="13.0" prefHeight="445.0" prefWidth="1058.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+              <columns>
+                <TableColumn fx:id="colNIC" prefWidth="88.0" text="NIC" />
+                <TableColumn fx:id="colName" prefWidth="117.0" text="Name" />
+                  <TableColumn fx:id="colContactNo" prefWidth="85.0" text="Contact No" />
+                  <TableColumn fx:id="colGender" prefWidth="83.0" text="Gender" />
+                  <TableColumn fx:id="colAddress" prefWidth="196.0" text="Address" />
+                  <TableColumn fx:id="colDate" prefWidth="104.0" text="Date" />
+                  <TableColumn fx:id="colTime" prefWidth="101.0" text="Time" />
+                  <TableColumn fx:id="colAge" prefWidth="73.0" text="Age" />
+                  <TableColumn fx:id="colEmpId" prefWidth="95.0" text="Employee Id" />
+                  <TableColumn fx:id="btn" prefWidth="115.0" text="Delete" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane blendMode="MULTIPLY" layoutX="1100.0" layoutY="46.0" prefHeight="624.0" prefWidth="31.0" style="-fx-background-color: linear-gradient(to bottom, #9fd2e9, #8fd2ea, #7cd1eb, #67d1ea, #4dd1e8, #42d4e8, #35d8e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);;" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="left-side-background" />
+            <String fx:value="anchorpane" />
+         </styleClass></Pane>
+      <Button blendMode="MULTIPLY" layoutX="749.0" layoutY="75.0" mnemonicParsing="false" onAction="#btnBackToFactoryOnAction" prefHeight="37.0" prefWidth="149.0" style="-fx-background-color: #2eb82e;" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css" text="    Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="31.0" fitWidth="25.0" layoutX="774.0" layoutY="81.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/back_to_24px.png" />
+         </image>
+      </ImageView>
+      <Line blendMode="MULTIPLY" endX="-1.0" endY="-32.99999237060547" layoutX="912.0" layoutY="111.0" opacity="0.33" startX="-1.0" startY="-2.0" stroke="#05636b" />
+      <Button blendMode="MULTIPLY" layoutX="925.0" layoutY="77.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="137.0" style="-fx-background-color: #002080;" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css" text="      Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="949.0" layoutY="82.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="-3.0" prefHeight="47.0" prefWidth="1134.0" style="-fx-background-color: linear-gradient(to bottom, #41b7ed, #32bced, #23c1ec, #11c6eb, #00cae8, #09d0e8, #18d5e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <TextField fx:id="txtSearch" layoutX="742.0" layoutY="6.0" onAction="#SearchOnAction" prefHeight="34.0" prefWidth="319.0" promptText="    Search" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="border" />
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="21.0" fitWidth="18.0" layoutX="1032.0" layoutY="13.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/search-1816292-1539657.png" />
+               </image>
+            </ImageView>
+            <Separator blendMode="MULTIPLY" layoutX="225.0" layoutY="27.0" prefHeight="0.0" prefWidth="479.0" style="-fx-background-color: #000000#000000;" />
+            <Line endX="-1.0" endY="-32.99999237060547" layoutX="1027.0" layoutY="40.0" opacity="0.33" startX="-1.0" startY="-2.0" stroke="#05636b" />
+         </children>
+      </Pane>
+      <Label blendMode="MULTIPLY" layoutX="26.0" layoutY="9.0" prefHeight="39.0" prefWidth="190.0" text="PATIENT DETAILS">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

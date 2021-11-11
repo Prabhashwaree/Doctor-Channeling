@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AppointmentPane" prefHeight="671.0" prefWidth="1134.0" style="-fx-background-color: #eaeae1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AppointmentFormController">
+   <children>
+      <Pane prefHeight="47.0" prefWidth="1134.0" style="-fx-background-color: linear-gradient(to bottom, #41b7ed, #32bced, #23c1ec, #11c6eb, #00cae8, #09d0e8, #18d5e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <TextField fx:id="txtSearch" layoutX="742.0" layoutY="6.0" onAction="#SearchOnAction" prefHeight="34.0" prefWidth="319.0" promptText="    Search" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="border" />
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="21.0" fitWidth="18.0" layoutX="1029.0" layoutY="13.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/search-1816292-1539657.png" />
+               </image>
+            </ImageView>
+            <Line endX="-1.0" endY="-32.99999237060547" layoutX="1026.0" layoutY="37.0" opacity="0.33" startX="-1.0" startY="2.0" stroke="#05636b" />
+         </children>
+      </Pane>
+      <Pane layoutX="35.0" layoutY="156.0" prefHeight="450.0" prefWidth="1056.0" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <TableView fx:id="tblAppointment" layoutX="14.0" layoutY="25.0" prefHeight="391.0" prefWidth="1014.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+              <columns>
+                <TableColumn fx:id="colAppointmentId" prefWidth="101.0" text="Appointment Id" />
+                <TableColumn fx:id="colDate" prefWidth="126.0" text="Date" />
+                  <TableColumn fx:id="colTime" prefWidth="133.0" text="Time" />
+                  <TableColumn fx:id="colPatientId" prefWidth="123.0" text="Patient ID" />
+                  <TableColumn fx:id="colDisease" prefWidth="146.0" text="Disease" />
+                  <TableColumn fx:id="colDoctorId" prefWidth="112.0" text="Doctor Id" />
+                  <TableColumn fx:id="colStatus" prefWidth="124.0" text="Status" />
+                  <TableColumn fx:id="colDelete" prefWidth="148.0" text="Delete" />
+              </columns>
+            </TableView>
+         </children>
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+      </Pane>
+      <Button layoutX="950.0" layoutY="92.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="137.0" style="-fx-background-color: #002080;" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css" text="      Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="974.0" layoutY="97.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="785.0" layoutY="91.0" mnemonicParsing="false" onAction="#btnBackToFactoryOnAction" prefHeight="34.0" prefWidth="137.0" style="-fx-background-color: #2eb82e;" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css" text="    Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="27.0" fitWidth="22.0" layoutX="809.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/back_to_24px.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="30.0" layoutY="6.0" prefHeight="39.0" prefWidth="191.0" text="APPOINTMENT ">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="202.0" layoutY="24.0" prefHeight="0.0" prefWidth="429.0" style="-fx-background-color: #000000#000000;" />
+      <Line endX="-1.0" endY="-32.99999237060547" layoutX="937.0" layoutY="128.0" opacity="0.33" startX="-1.0" startY="2.0" stroke="#05636b" />
+      <Pane layoutX="1102.0" layoutY="49.0" prefHeight="620.0" prefWidth="32.0" style="-fx-background-color: linear-gradient(to bottom, #41b7ed, #32bced, #23c1ec, #11c6eb, #00cae8, #09d0e8, #18d5e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="right-side-background" />
+            <String fx:value="anchorpane" />
+         </styleClass>
+      </Pane>
+   </children>
+</AnchorPane>

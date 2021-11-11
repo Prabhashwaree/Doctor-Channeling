@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="671.0" prefWidth="1152.0" style="-fx-background-color: #eaeae1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReprtFormController">
+   <children>
+      <Pane layoutX="30.0" layoutY="79.0" prefHeight="572.0" prefWidth="494.0" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <LineChart fx:id="chartDalyInCome" layoutX="8.0" layoutY="12.0" prefHeight="562.0" prefWidth="475.0" title="Daily Income">
+              <xAxis>
+                <CategoryAxis prefWidth="418.0" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="pane-border" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+      </Pane>
+      <Label layoutX="39.0" layoutY="2.0" prefHeight="58.0" prefWidth="407.0" text="PAYMENT CHART REPORT">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="331.0" layoutY="31.0" prefHeight="0.0" prefWidth="250.0" style="-fx-background-color: #000000;" />
+      <Pane layoutX="543.0" layoutY="47.0" prefHeight="294.0" prefWidth="561.0" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <LineChart fx:id="monthlyIncome" layoutX="-5.0" layoutY="5.0" prefHeight="294.0" prefWidth="561.0" title="Monthly Income">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+         </children>
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="pane-border" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+      </Pane>
+      <Pane layoutX="543.0" layoutY="350.0" prefHeight="294.0" prefWidth="561.0" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <LineChart fx:id="AnnualyIncome" layoutX="-5.0" layoutY="5.0" prefHeight="294.0" prefWidth="561.0" title="Annualy Income">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </LineChart>
+         </children>
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="pane-border" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+      </Pane>
+   </children>
+</AnchorPane>

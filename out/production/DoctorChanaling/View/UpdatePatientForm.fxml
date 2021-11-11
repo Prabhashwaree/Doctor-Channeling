@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="512.0" prefWidth="391.0" style="-fx-background-color: #ebebe0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UpdatePatientFormController">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="25.0" prefWidth="391.0" style="-fx-background-color: #90d5d5;" styleClass="anchorpane" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <Pane layoutX="368.0" prefHeight="14.0" prefWidth="23.0" style="-fx-background-color: #90d5d5;" stylesheets="@../CSS/StyleSheet.css" />
+         </children>
+      </Pane>
+      <Pane layoutX="24.0" layoutY="43.0" prefHeight="441.0" prefWidth="341.0" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+         <children>
+            <TextField fx:id="TxtGender" layoutX="31.0" layoutY="194.0" prefHeight="30.0" prefWidth="273.0" promptText="Gender">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button layoutX="208.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnDeletePatientOnAction" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: #90d5d5;" styleClass="table-border" stylesheets="@../CSS/StyleSheet.css" text="   Update">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="30.0" layoutY="5.0" prefHeight="39.0" prefWidth="249.0" text="PATIENT UPDATE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTime" layoutX="178.0" layoutY="289.0" prefHeight="30.0" prefWidth="126.0" promptText="Time">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtDate" layoutX="30.0" layoutY="289.0" prefHeight="30.0" prefWidth="126.0" promptText="Date">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="23.0" fitWidth="21.0" layoutX="278.0" layoutY="199.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/lgbtq_30px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="130.0" layoutY="295.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/pay_date_50px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="18.0" layoutX="280.0" layoutY="295.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/Clock_26px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="221.0" layoutY="397.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtAge" layoutX="30.0" layoutY="333.0" prefHeight="30.0" prefWidth="126.0" promptText="Age">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="132.0" layoutY="339.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/management_24px.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtEmpId" layoutX="180.0" layoutY="333.0" prefHeight="30.0" prefWidth="122.0" promptText="Emp ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="275.0" layoutY="339.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/hashtag_large_24px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="txtNIC" layoutX="186.0" layoutY="87.0" onAction="#moveToName" prefHeight="30.0" prefWidth="140.0" promptText="NIC">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="303.0" layoutY="93.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/name_tag_30px.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtName" layoutX="55.0" layoutY="142.0" prefHeight="30.0" prefWidth="273.0" promptText="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="TxtContact" layoutX="55.0" layoutY="189.0" prefHeight="30.0" prefWidth="273.0" promptText="Contact No">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAddress" layoutX="55.0" layoutY="285.0" prefHeight="30.0" prefWidth="273.0" promptText="Address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="300.0" layoutY="148.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/user_50px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="14.0" fitWidth="18.0" layoutX="303.0" layoutY="196.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/phone_26px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="14.0" layoutX="302.0" layoutY="292.0" opacity="0.42" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/home_50px.png" />
+         </image>
+      </ImageView>
+      <Pane layoutY="-1.0" prefHeight="14.0" prefWidth="23.0" style="-fx-background-color: #90d5d5;" stylesheets="@../CSS/StyleSheet.css" />
+   </children>
+</AnchorPane>

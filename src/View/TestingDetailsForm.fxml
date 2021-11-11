@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="testingPane" prefHeight="671.0" prefWidth="1154.0" style="-fx-background-color: #ebebe0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TestingDetailsFormController">
+   <children>
+      <Pane prefHeight="49.0" prefWidth="1156.0" style="-fx-background-color: linear-gradient(to bottom, #41b7ed, #32bced, #23c1ec, #11c6eb, #00cae8, #09d0e8, #18d5e8, #26dbe7, #36e3ea, #44ebec, #52f3ef, #5ffbf1);" />
+      <Label layoutX="43.0" layoutY="3.0" prefHeight="39.0" prefWidth="191.0" text="Testing Details">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="4.0" layoutY="54.0" prefHeight="3.0" prefWidth="1146.0" />
+      <Pane layoutX="93.0" layoutY="68.0" prefHeight="274.0" prefWidth="954.0" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <TextField fx:id="txtName" disable="true" layoutX="46.0" layoutY="116.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="243.0" promptText="Patient Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtContact" disable="true" layoutX="46.0" layoutY="166.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="243.0" promptText="Patient Contact No">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="47.0" layoutY="18.0" prefHeight="39.0" prefWidth="243.0" text="TESTING INFORMATION">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbNIC" layoutX="46.0" layoutY="66.0" onAction="#patientNICOnAction" prefHeight="31.0" prefWidth="243.0" promptText="Patient NIC" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="border" />
+               </styleClass>
+            </ComboBox>
+            <ComboBox fx:id="cmbTestingID" layoutX="397.0" layoutY="66.0" onAction="#testingIdOnAction" prefHeight="31.0" prefWidth="243.0" promptText="Testing ID" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="border" />
+               </styleClass>
+            </ComboBox>
+            <Label fx:id="lblDate" layoutX="389.0" layoutY="10.0" prefHeight="31.0" prefWidth="135.0" text="2021-01-02">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="542.0" layoutY="11.0" prefHeight="31.0" prefWidth="114.0" text="04:05:35">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Pane layoutX="325.0" layoutY="1.0" prefHeight="49.0" prefWidth="420.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" />
+            <TextField fx:id="txtAddress" disable="true" layoutX="46.0" layoutY="214.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="243.0" promptText="Patient Address">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Separator layoutX="342.0" layoutY="66.0" orientation="VERTICAL" prefHeight="176.0" prefWidth="1.0" />
+            <Separator layoutX="685.0" layoutY="59.0" orientation="VERTICAL" prefHeight="176.0" prefWidth="1.0" />
+            <TextField fx:id="txtResult" layoutX="397.0" layoutY="112.0" onAction="#moveToRange" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="243.0" promptText="Result">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtRange" layoutX="397.0" layoutY="166.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="31.0" prefWidth="243.0" promptText="Range">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnSave" layoutX="752.0" layoutY="50.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);" stylesheets="@../CSS/StyleSheet.css" text="     Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="left-side-background" />
+                  <String fx:value="border" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="780.0" layoutY="56.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/save-1779882-1518534.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="248.0" layoutY="36.0" prefHeight="3.0" prefWidth="698.0" />
+            <Button fx:id="btnUpdate" layoutX="750.0" layoutY="101.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: #ccccb3;" stylesheets="@../CSS/StyleSheet.css" text="     Update" textFill="#515050">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="left-side-background" />
+                  <String fx:value="border" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="780.0" layoutY="109.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnDelete" layoutX="750.0" layoutY="155.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: #ff1a1a;" stylesheets="@../CSS/StyleSheet.css" text="     Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="left-side-background" />
+                  <String fx:value="border" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="780.0" layoutY="161.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/delete-1786889-1522301.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="750.0" layoutY="209.0" mnemonicParsing="false" onAction="#btnBackToFactoryOnAction" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: #2eb82e;" stylesheets="@../CSS/StyleSheet.css" text="     Back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="left-side-background" />
+                  <String fx:value="border" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="28.0" fitWidth="23.0" layoutX="780.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/back_to_24px.png" />
+               </image>
+            </ImageView>
+         </children>
+         <styleClass>
+            <String fx:value="right-side-background" />
+            <String fx:value="anchorpane" />
+         </styleClass>
+      </Pane>
+      <Pane layoutX="39.0" layoutY="356.0" prefHeight="293.0" prefWidth="1062.0" stylesheets="@../CSS/StyleSheet.css">
+         <styleClass>
+            <String fx:value="right-side-background" />
+            <String fx:value="anchorpane" />
+         </styleClass>
+         <children>
+            <TableView fx:id="tblTesting" layoutX="23.0" layoutY="22.0" onMouseClicked="#tableMouseClick" prefHeight="246.0" prefWidth="1016.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+               <columns>
+                  <TableColumn fx:id="colDate" prefWidth="116.0" text="Date" />
+                  <TableColumn fx:id="colTime" prefWidth="131.0" text="Time" />
+                  <TableColumn fx:id="colResult" prefWidth="173.0" text="Result" />
+                  <TableColumn fx:id="colRange" prefWidth="196.0" text="Range" />
+                  <TableColumn fx:id="colNIC" prefWidth="220.0" text="Patient NIC" />
+                  <TableColumn fx:id="colTestingId" prefWidth="178.0" text="Testing ID" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <TextField fx:id="txtSearch" layoutX="769.0" layoutY="7.0" onAction="#btnSearchAction" prefHeight="31.0" prefWidth="332.0" promptText="  Search" stylesheets="@../CSS/StyleSheet.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <styleClass>
+            <String fx:value="anchorpane" />
+            <String fx:value="black-border" />
+         </styleClass>
+      </TextField>
+      <Line endX="13.0" endY="-47.0" layoutX="1048.0" layoutY="55.0" startX="13.0" startY="-16.999984741210938" stroke="#4d5151" />
+      <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="1068.0" layoutY="13.0" opacity="0.53" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/search-1816292-1539657.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

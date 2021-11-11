@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Main" prefHeight="696.0" prefWidth="1390.0" style="-fx-background-color: #dcdcdc;" stylesheets="@../CSS/StyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashBoardFormController">
+   <children>
+      <AnchorPane fx:id="dashBoardAcorPaneMain" layoutX="232.0" layoutY="42.0" prefHeight="671.0" prefWidth="1140.0">
+         <children>
+            <Pane layoutX="894.0" layoutY="9.0" prefHeight="302.0" prefWidth="238.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="anchorpane" />
+                  <String fx:value="right-side-background" />
+               </styleClass>
+               <children>
+                  <Label layoutX="24.0" layoutY="13.0" prefHeight="39.0" prefWidth="191.0" text="PAYMENT BILL">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="96.0" prefHeight="29.0" prefWidth="112.0" text="Chanaling Amount " />
+                  <Label layoutX="19.0" layoutY="150.0" prefHeight="29.0" prefWidth="112.0" text="Testing Amount     " />
+                  <TextField fx:id="txtChanalingAmount" layoutX="131.0" layoutY="96.0" onAction="#moveToTesting" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="25.0" prefWidth="93.0" stylesheets="@../CSS/StyleSheet.css">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </TextField>
+                  <TextField fx:id="txtTestingAmount" layoutX="131.0" layoutY="147.0" onAction="#moveToTotal" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="25.0" prefWidth="93.0" stylesheets="@../CSS/StyleSheet.css">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </TextField>
+                  <Label layoutX="18.0" layoutY="199.0" prefHeight="29.0" prefWidth="112.0" text="Total                      " />
+                  <TextField fx:id="txtTotal" layoutX="130.0" layoutY="198.0" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="25.0" prefWidth="93.0" stylesheets="@../CSS/StyleSheet.css">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </TextField>
+                  <Button fx:id="btnViewReport" layoutX="128.0" layoutY="248.0" mnemonicParsing="false" onMouseClicked="#viewRepoartOnAction" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);;" stylesheets="@../CSS/StyleSheet.css" text="    View">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="left-side-background" />
+                        <String fx:value="border" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="141.0" layoutY="253.0" opacity="0.79" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/doctors_folder_24px.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="155.0" layoutY="49.0" prefHeight="34.0" prefWidth="67.0" stylesheets="@../CSS/StyleSheet.css">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="pane-border" />
+                     </styleClass>
+                  </TextField>
+                  <Label layoutX="18.0" layoutY="52.0" prefHeight="29.0" prefWidth="44.0" text="Bill No">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPaymentId" layoutX="153.0" layoutY="50.0" onAction="#txtBillIdOnAction" prefHeight="21.0" prefWidth="67.0" promptText="B-000" stylesheets="@../CSS/StyleSheet.css">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </TextField>
+                  <Line endX="-1.0" endY="-32.99999237060547" layoutX="159.0" layoutY="84.0" opacity="0.33" startX="-1.0" startY="-4.5" stroke="#05636b" />
+                  <Line endX="-1.0" endY="-32.99999237060547" layoutX="219.0" layoutY="83.0" opacity="0.33" startX="-1.0" startY="-4.5" stroke="#05636b" />
+                  <Line endX="-72.5" endY="-43.5" layoutX="229.0" layoutY="95.0" opacity="0.7" startX="-11.5" startY="-43.49998474121094" stroke="#05636b" />
+                  <Line endX="-72.5" endY="-43.5" layoutX="230.0" layoutY="124.0" opacity="0.7" startX="-11.5" startY="-43.49998474121094" stroke="#05636b" />
+                  <Button layoutX="12.0" layoutY="250.0" mnemonicParsing="false" onAction="#billRefrshOnAction" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #2eb82e;" stylesheets="@../CSS/StyleSheet.css" text="    Update">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="border" />
+                        <String fx:value="left-side-background" />
+                     </styleClass>
+                  </Button>
+                  <Line endX="373.0" endY="-8.5" layoutX="-254.0" layoutY="255.0" opacity="0.39" startX="373.0" startY="31.0" />
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="23.0" layoutY="255.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="11.0" layoutY="11.0" prefHeight="323.0" prefWidth="350.0" style="-fx-background-color: #FFFFFF;" styleClass="anchorpane" stylesheets="@../CSS/StyleSheet.css">
+               <children>
+                  <Label layoutX="30.0" layoutY="13.0" prefHeight="39.0" prefWidth="191.0" text="PATIENT INFORMATION">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNIC" layoutX="174.0" layoutY="52.0" onAction="#txtPatientNICOnAction" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="150.0" promptText="NIC">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtName" layoutX="30.0" layoutY="100.0" onAction="#moveToContact" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="273.0" promptText="Name">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="TxtContact" layoutX="30.0" layoutY="141.0" onAction="#moveToAddress" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="273.0" promptText="Contact No">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtAddress" layoutX="30.0" layoutY="224.0" onAction="#moveToAge" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="273.0" promptText="Address">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="cmbGender" layoutX="30.0" layoutY="182.0" onKeyReleased="#keyOnActionPatient" prefHeight="30.0" prefWidth="273.0" promptText="Gender" stylesheets="@../CSS/StyleSheet.css">
+                     <styleClass>
+                        <String fx:value="right-side-background" />
+                        <String fx:value="border" />
+                     </styleClass>
+                  </ComboBox>
+                  <TextField fx:id="txtAge" layoutX="30.0" layoutY="265.0" onAction="#moveToDisease" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="93.0" promptText="Age">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Pane layoutX="-48.0" layoutY="-38.0" prefHeight="34.0" prefWidth="200.0" />
+                  <ImageView fitHeight="24.0" fitWidth="21.0" layoutX="289.0" layoutY="55.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/card_security_30px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="21.0" layoutX="268.0" layoutY="105.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/user_50px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="270.0" layoutY="148.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/phone_26px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="22.0" fitWidth="24.0" layoutX="268.0" layoutY="186.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/lgbtq_30px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="271.0" layoutY="231.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/home_50px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="21.0" fitWidth="22.0" layoutX="96.0" layoutY="270.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/management_24px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="370.0" layoutY="14.0" prefHeight="323.0" prefWidth="514.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="right-side-background" />
+                  <String fx:value="anchorpane" />
+               </styleClass>
+               <children>
+                  <Label layoutX="35.0" layoutY="15.0" prefHeight="39.0" prefWidth="232.0" text="APPOINTMENT INFORMATION">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtDisease" layoutX="35.0" layoutY="148.0" onAction="#moveToDoctorId" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="292.0" promptText="Disease">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtDoctorId" layoutX="35.0" layoutY="205.0" onAction="#moveToChanaling" onKeyReleased="#validateKeyReleasedOnAction" prefHeight="30.0" prefWidth="292.0" promptText="Doctor Id">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField layoutX="408.0" layoutY="35.0" prefHeight="31.0" prefWidth="77.0" stylesheets="@../CSS/StyleSheet.css">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="transparent" />
+                        <String fx:value="pane-border" />
+                     </styleClass>
+                  </TextField>
+                  <Label layoutX="296.0" layoutY="36.0" prefHeight="29.0" prefWidth="119.0" text="Appointment Id  ">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblApointment" layoutX="423.0" layoutY="36.0" prefHeight="29.0" prefWidth="77.0" text="A-001">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAppointmentID" layoutX="34.0" layoutY="80.0" onAction="#AppointmentOnAction" prefHeight="30.0" prefWidth="218.0" promptText="  Appoint ID" styleClass="anchorpane" stylesheets="@../CSS/StyleSheet.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="222.0" layoutY="86.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/search-1816292-1539657.png" />
+                     </image>
+                  </ImageView>
+                  <Line endX="-156.0" endY="-1.52587890625E-5" layoutX="373.0" layoutY="80.0" startX="-156.0" startY="30.0" stroke="#c3c3c3" />
+                  <Line endX="-1.0" endY="-32.99999237060547" layoutX="412.0" layoutY="69.0" opacity="0.33" startX="-1.0" startY="-4.5" stroke="#05636b" />
+                  <Button layoutX="316.0" layoutY="264.0" mnemonicParsing="false" onAction="#ApointmentRefreshOnAction" prefHeight="34.0" prefWidth="174.0" style="-fx-background-color: #595959;" stylesheets="@../CSS/StyleSheet.css" text="    Refresh" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <styleClass>
+                        <String fx:value="border" />
+                        <String fx:value="left-side-background" />
+                     </styleClass>
+                  </Button>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="345.0" layoutY="270.0" opacity="0.39" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/update-autorenew-refresh-reload-31805.png" />
+                     </image>
+                  </ImageView>
+                  <Line endX="-1.0" endY="-32.99999237060547" layoutX="483.0" layoutY="69.0" opacity="0.33" startX="-1.0" startY="-4.5" stroke="#05636b" />
+                  <Line endX="-82.5" endY="-43.5" layoutX="493.0" layoutY="81.0" opacity="0.7" startX="-11.5" startY="-43.49998474121094" stroke="#05636b" />
+                  <Line endX="-82.5" endY="-43.5" layoutX="494.0" layoutY="107.0" opacity="0.7" startX="-11.5" startY="-43.49998474121094" stroke="#05636b" />
+                  <ImageView fitHeight="24.0" fitWidth="22.0" layoutX="296.0" layoutY="153.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/being_sick_24px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="22.0" layoutX="296.0" layoutY="209.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/name_tag_30px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="12.0" layoutY="352.0" prefHeight="312.0" prefWidth="877.0" stylesheets="@../CSS/StyleSheet.css">
+               <styleClass>
+                  <String fx:value="right-side-background" />
+                  <String fx:value="anchorpane" />
+               </styleClass>
+               <children>
+                  <TableView fx:id="tblReseptionDashBoard" layoutX="8.0" layoutY="44.0" prefHeight="261.0" prefWidth="856.0" styleClass="transparent" stylesheets="@../CSS/StyleSheet.css">
+                     <columns>
+                        <TableColumn fx:id="colEmpId" prefWidth="74.0" text="EmpId" />
+                        <TableColumn fx:id="colNIC" prefWidth="108.99996948242188" text="NIC" />
+                        <TableColumn fx:id="COLName" prefWidth="151.0" text="Name" />
+                        <TableColumn fx:id="colContactNo" prefWidth="101.0" text="Contact No" />
+                        <TableColumn fx:id="colAge" prefWidth="56.0" text="Age" />
+                        <TableColumn fx:id="colAppointmentId" prefWidth="104.0" text="Appoint Id" />
+                        <TableColumn fx:id="colDoctoerId" prefWidth="112.0" text="Doctor Id" />
+                        <TableColumn fx:id="colAmount" prefWidth="148.0" text="Total Amount" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="btnSave" layoutX="674.0" layoutY="6.0" mnemonicParsing="false" onAction="#btnDashbordConfirm" prefHeight="31.0" prefWidth="174.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);" stylesheets="@../CSS/StyleSheet.css" text="Confirm Transfer" textFill="#4d4040">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="left-side-background" />
+                        <String fx:value="border" />
+                     </styleClass>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ImageView fitHeight="24.0" fitWidth="29.0" layoutX="681.0" layoutY="9.0" opacity="0.35" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset/save-1779882-1518534.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fitHeight="339.0" fitWidth="387.0" layoutX="894.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/kisspng-calculator-business-clip-art-calculator-5ab71ec1a89f38.8457428915219504016907.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="893.0" layoutY="309.0" prefHeight="339.0" prefWidth="247.0" stylesheets="@../CSS/StyleSheet.css">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="GAINSBORO" height="21.0" layoutX="-4.0" layoutY="337.0" stroke="GAINSBORO" strokeType="INSIDE" width="255.0" />
+                  <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="141.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="1" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="67.0" layoutY="141.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="2" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnPluse" buttonType="RAISED" layoutX="168.0" layoutY="141.0" onAction="#btnOperationOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="+" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="141.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="3" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnMinus" buttonType="RAISED" layoutX="168.0" layoutY="184.0" onAction="#btnOperationOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="-" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="117.0" layoutY="184.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="6" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="67.0" layoutY="183.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="5" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="184.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="4" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="226.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="7" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="69.0" layoutY="226.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="8" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="119.0" layoutY="226.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="9" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnMax" buttonType="RAISED" layoutX="169.0" layoutY="225.0" onAction="#btnOperationOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="X" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="267.0" onAction="#calHandleOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="0" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnequel" buttonType="RAISED" layoutX="69.0" layoutY="267.0" onAction="#btnOperationOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="=" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="119.0" layoutY="267.0" onAction="#btnOperationOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="CLEAR" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton fx:id="btnDiv" buttonType="RAISED" layoutX="168.0" layoutY="267.0" onAction="#btnOperationOnAction" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #000000;" text="/" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <TextField fx:id="txtCal" layoutX="18.0" layoutY="40.0" prefHeight="73.0" prefWidth="205.0" styleClass="anchorpane" stylesheets="@../CSS/StyleSheet.css">
+                     <font>
+                        <Font size="34.0" />
+                     </font></TextField>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="39.0" stroke="WHITE" strokeType="INSIDE" width="1390.0" />
+      <Pane prefHeight="39.0" prefWidth="1390.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);" stylesheets="@../CSS/StyleSheet.css" />
+      <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="18.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/menu_rounded_32px.png" />
+         </image>
+      </ImageView>
+      <TextField blendMode="MULTIPLY" layoutX="1127.0" layoutY="3.0" opacity="0.73" prefHeight="31.0" prefWidth="150.0" style="-fx-background-color: #0d0d0d;" stylesheets="@../CSS/StyleSheet.css">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <styleClass>
+            <String fx:value="transparent" />
+            <String fx:value="table-border" />
+            <String fx:value="border" />
+         </styleClass>
+      </TextField>
+      <Pane layoutX="-3.0" layoutY="39.0" prefHeight="671.0" prefWidth="238.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);;">
+         <children>
+            <ImageView fitHeight="162.0" fitWidth="200.0" layoutX="38.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/Capture.PNG" />
+               </image>
+            </ImageView>
+            <Pane layoutX="38.0" layoutY="225.0" prefHeight="33.0" prefWidth="161.0" style="-fx-background-color: #006666;" stylesheets="@../CSS/StyleSheet.css">
+               <children>
+                  <Label layoutX="14.0" layoutY="2.0" prefHeight="29.0" prefWidth="100.0" text="Employee ID :" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblEmpId" layoutX="107.0" layoutY="-3.0" prefHeight="39.0" prefWidth="77.0" text="001" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="left-side-background" />
+                  <String fx:value="border" />
+               </styleClass>
+            </Pane>
+            <Line endX="125.0" layoutX="108.0" layoutY="445.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="125.0" layoutX="109.0" layoutY="519.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="125.0" layoutX="109.0" layoutY="364.0" startX="-100.0" stroke="WHITE" />
+         </children></Pane>
+      <Pane blendMode="MULTIPLY" layoutX="669.0" layoutY="4.0" opacity="0.71" prefHeight="31.0" prefWidth="183.0" style="-fx-background-color: #0d0d0d;" styleClass="border" stylesheets="@../CSS/StyleSheet.css" />
+      <Pane layoutX="753.0" layoutY="6.0" prefHeight="29.0" prefWidth="44.0" styleClass="border" stylesheets="@../CSS/StyleSheet.css" />
+      <Pane layoutX="669.0" layoutY="6.0" prefHeight="29.0" prefWidth="77.0" styleClass="border" stylesheets="@../CSS/StyleSheet.css" />
+      <Pane layoutX="1125.0" layoutY="6.0" prefHeight="29.0" prefWidth="44.0" styleClass="border" stylesheets="@../CSS/StyleSheet.css" />
+      <Pane layoutX="1180.0" layoutY="5.0" prefHeight="29.0" prefWidth="44.0" styleClass="border" stylesheets="@../CSS/StyleSheet.css" />
+      <Pane layoutX="1234.0" layoutY="5.0" prefHeight="29.0" prefWidth="44.0" styleClass="border" stylesheets="@../CSS/StyleSheet.css" />
+      <Pane layoutX="804.0" layoutY="6.0" prefHeight="29.0" prefWidth="44.0" styleClass="border" stylesheets="@../CSS/StyleSheet.css" />
+      <Label fx:id="lblDate" alignment="CENTER" contentDisplay="CENTER" layoutX="662.0" layoutY="1.0" prefHeight="39.0" prefWidth="191.0" text="2021 - 08 - 01" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" alignment="CENTER" contentDisplay="CENTER" layoutX="1110.0" prefHeight="39.0" prefWidth="191.0" text="10 : 45 : 05" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Line endX="1290.0" layoutX="100.0" startX="-100.0" />
+      <Button layoutY="419.0" mnemonicParsing="false" onAction="#btnBinOnAction" prefHeight="48.0" prefWidth="235.0" stylesheets="@../CSS/StyleSheet.css" text="   RECYCLE BIN">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="border" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+      </Button>
+      <Button layoutX="-2.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="238.0" stylesheets="@../CSS/StyleSheet.css" text="    BACK TO LOGIN">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="border" />
+            <String fx:value="right-side-background" />
+         </styleClass>
+      </Button>
+      <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="25.0" layoutY="431.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/recycle-bin-2658969-2215252.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="26.0" layoutY="511.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset/back-3312690-2779888.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblMenuBack" layoutX="2.0" layoutY="3.0" prefHeight="33.0" prefWidth="77.0" />
+      <Label fx:id="lblMenu" layoutX="2.0" layoutY="2.0" prefHeight="33.0" prefWidth="77.0" />
+      <AnchorPane fx:id="sliderAncorPane" layoutX="-3.0" layoutY="39.0" prefHeight="679.0" prefWidth="238.0" style="-fx-background-color: linear-gradient(to right top, #6b6bd1, #3986e3, #009eeb, #00b3ea, #00c5e4, #00c0dd, #00bbd7, #00b6d0, #009ac6, #007eba, #0062a8, #004590);;" stylesheets="@../CSS/StyleSheet.css">
+         <children>
+            <Button layoutX="5.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnPationOnAction" prefHeight="44.0" prefWidth="232.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="       Patient Details" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="-3.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnAppointmentOnAction" prefHeight="44.0" prefWidth="240.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="        Appointment " textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="6.0" layoutY="439.0" mnemonicParsing="false" onAction="#btnPaymentOnAction" prefHeight="39.0" prefWidth="232.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="     Payment" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="6.0" layoutY="373.0" mnemonicParsing="false" onAction="#btnMedicalTestingOnAction" prefHeight="39.0" prefWidth="232.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="     Medical Testing" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Line endX="125.0" layoutX="105.0" layoutY="281.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="125.0" layoutX="105.0" layoutY="356.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="125.0" layoutX="105.0" layoutY="428.0" startX="-100.0" stroke="WHITE" />
+            <Line endX="125.0" layoutX="106.0" layoutY="490.0" startX="-100.0" stroke="WHITE" />
+            <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="23.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/physical_therapy_50px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="23.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/timetable_30px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="26.0" layoutY="444.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/pay_24px.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="24.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/hypertension_50px.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="4.0" layoutY="571.0" mnemonicParsing="false" onAction="#btnBackLoginOnAction" prefHeight="39.0" prefWidth="232.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="Log Out" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Line endX="125.0" layoutX="108.0" layoutY="555.0" startX="-100.0" stroke="WHITE" />
+            <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="23.0" layoutY="576.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/rewind_button_round_24px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="24.0" layoutY="156.0" prefHeight="34.0" prefWidth="200.0" text="Diagnostic Center" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Italic" size="27.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="154.0" fitWidth="200.0" layoutX="60.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/doctor-symbol-1.gif" />
+               </image>
+            </ImageView>
+            <Button layoutX="5.0" layoutY="503.0" mnemonicParsing="false" onAction="#btnAllTestingDetails" prefHeight="39.0" prefWidth="232.0" styleClass="right-side-background" stylesheets="@../CSS/StyleSheet.css" text="      Testing All Details" textFill="#726666">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="23.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/doctors_folder_24px.png" />
+               </image>
+            </ImageView>
+            <Line endX="125.0" layoutX="108.0" layoutY="625.0" startX="-100.0" stroke="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
